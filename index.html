@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <title>移転のお知らせ - 宙の辻</title>
     <script>
-        setTimeout(function(){ window.location.href = "https://soranotsuji.net/"; }, 5000);
+        // ① 旧ドメインに残っている「宙の辻」の保存データを削除
+        localStorage.removeItem('soranotsuji_app');
+        
+        // （※もし過去の古いバージョンのキーも完全に消し去りたい場合は、
+        // 以下の1行のコメントアウトを外すと、このドメインの全ストレージを空にできます）
+        localStorage.clear();
+
+        // ② 5秒後に新ドメインへ自動転送
+        setTimeout(function(){ 
+            window.location.href = "https://soranotsuji.net/"; 
+        }, 5000);
     </script>
 </head>
 <body style="text-align: center; padding-top: 50px; font-family: sans-serif;">
     <h2>「宙の辻」は新ドメインへ移転しました</h2>
     <p>新しいURL: <a href="https://soranotsuji.net/">https://soranotsuji.net/</a></p>
     <p>5秒後に自動的に移動します。</p>
+    <br>
+    <p style="font-size: 0.8em; color: #666;">
+        ※ご利用の端末に残っていた旧サイトの設定データは、安全に消去されました。<br>
+        新サイトにて、改めてMy天体などのご登録をお願いいたします。
+    </p>
 </body>
 </html>
